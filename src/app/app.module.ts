@@ -13,6 +13,7 @@ import { ListUsersComponent } from './list-users/list-users.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatDialogModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [ApiUsersService],
   bootstrap: [AppComponent]

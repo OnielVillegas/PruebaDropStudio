@@ -1,6 +1,25 @@
-<h1>{{data.name}}</h1>
-<div>
-    <ul>
-        <li>{{data.phone}}</li>
-    </ul>
+<div *ngIf="user">
+    <mat-card class="example-card">
+        <mat-card-header class="padre">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{user.name}}</mat-card-title>
+            <mat-card-subtitle>{{user.phone}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions class="padre">
+            <mat-icon class="hijo">videocam</mat-icon>
+            <mat-icon class="hijo">phone</mat-icon>
+            <mat-icon class="hijo">message</mat-icon>
+        </mat-card-actions>
+    </mat-card>
 </div>
+<mat-list>
+    <mat-list-item *ngFor="let users of users">
+        <div>
+            <label>{{users.address.city}}</label><br>
+            <label>{{users.phone}}</label><br>
+        </div>
+        <div class="icon-class">
+            <label>10:00</label><br>
+        </div>
+    </mat-list-item>
+</mat-list>

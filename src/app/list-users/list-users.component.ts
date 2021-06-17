@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiUsersService } from '../services/api-users.service';
-import { UserInfoComponent } from '../user-info/user-info.component';
 
 @Component({
   selector: 'app-list-users',
@@ -13,7 +11,7 @@ export class ListUsersComponent implements OnInit {
 
   usuarios: any;
 
-  constructor(private api: ApiUsersService, private router: Router, public dialog: MatDialog) { }
+  constructor(private api: ApiUsersService, private router: Router) { }
 
   ngOnInit() {
     this.api.getUsuarios().subscribe(
@@ -22,13 +20,7 @@ export class ListUsersComponent implements OnInit {
     );
   }
 
-  async UserInfo(id: number){
-    let params = await this.api.getUsuario(id).toPromise().then(
-      data => data,
-      err => console.log(err)
-    );  
-
-    this.dialog.open(UserInfoComponent,{
-      data: params});
+  pageUserInfo(id: number){
+    this.router.navigate(['/info'], { queryParams: { idUser: id } });
   }
 }

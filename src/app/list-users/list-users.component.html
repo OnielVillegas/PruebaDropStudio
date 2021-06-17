@@ -1,7 +1,7 @@
 <mat-list>
   <mat-list-item *ngFor="let users of usuarios">
     <mat-icon mat-list-icon>account_circle</mat-icon>
-    <div (click)="UserInfo(users.id);">
+    <div (click)="pageUserInfo(users.id);">
       <label>{{users.name}}</label><br>
       <label>{{users.phone}}</label><br>
     </div>    
